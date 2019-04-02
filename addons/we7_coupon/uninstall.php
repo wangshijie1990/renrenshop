@@ -1,0 +1,27 @@
+<?php
+pdo_query("DROP TABLE IF EXISTS ``;
+DROP TABLE IF EXISTS ``;
+DROP TABLE IF EXISTS ``;
+DROP TABLE IF EXISTS `ims_cgc_ad_couponc`;
+DROP TABLE IF EXISTS `ims_coupon`;
+DROP TABLE IF EXISTS `ims_coupon_activity`;
+DROP TABLE IF EXISTS `ims_coupon_groups`;
+DROP TABLE IF EXISTS `ims_coupon_location`;
+DROP TABLE IF EXISTS `ims_coupon_modules`;
+DROP TABLE IF EXISTS `ims_coupon_record`;
+DROP TABLE IF EXISTS `ims_coupon_store`;
+DROP TABLE IF EXISTS `ims_ewei_shop_coupon`;
+DROP TABLE IF EXISTS `ims_ewei_shop_coupon_category`;
+DROP TABLE IF EXISTS `ims_ewei_shop_coupon_data`;
+DROP TABLE IF EXISTS `ims_ewei_shop_coupon_goodsendtask`;
+DROP TABLE IF EXISTS `ims_ewei_shop_coupon_guess`;
+DROP TABLE IF EXISTS `ims_ewei_shop_coupon_log`;
+DROP TABLE IF EXISTS `ims_ewei_shop_coupon_record`;
+DROP TABLE IF EXISTS `ims_ewei_shop_coupon_sendshow`;
+DROP TABLE IF EXISTS `ims_ewei_shop_coupon_sendtasks`;
+DROP TABLE IF EXISTS `ims_ewei_shop_coupon_taskdata`;
+DROP TABLE IF EXISTS `ims_ewei_shop_coupon_usesendtasks`;
+DROP TABLE IF EXISTS `ims_ewei_shop_live_coupon`;
+DROP TABLE IF EXISTS `ims_ewei_shop_sale_coupon`;
+DROP TABLE IF EXISTS `ims_ewei_shop_sale_coupon_data`;
+");

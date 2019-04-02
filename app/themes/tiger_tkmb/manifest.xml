@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest versionCode="0.52,0.6">
+	<identifie><![CDATA[tiger_tkmb]]></identifie>
+	<title><![CDATA[淘宝客]]></title>
+	<type><![CDATA[often]]></type>
+	<description><![CDATA[老虎淘宝客辅助模版]]></description>
+	<author><![CDATA[若晨社区]]></author>
+	<url><![CDATA[http://bbs.rocrm.cn/]]></url>
+	<sections><![CDATA[0]]></sections>
+	<settings>
+	</settings>
+</manifest>
