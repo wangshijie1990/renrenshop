@@ -11,6 +11,7 @@ class Register_EweiShopV2Page extends CommissionMobileLoginPage
 	{
 		global $_W;
 		global $_GPC;
+
 		$openid = $_W['openid'];
 		$set = set_medias($this->set, 'regbg');
 		$area_set = m('util')->get_area_config_set();
@@ -26,7 +27,6 @@ class Register_EweiShopV2Page extends CommissionMobileLoginPage
 			header('location: ' . $set['no_commission_url']);
 			exit();
 		}
-
 		if ($member['agentblack']) {
 			include $this->template();
 			exit();
@@ -92,7 +92,6 @@ class Register_EweiShopV2Page extends CommissionMobileLoginPage
 			}
 
 			$icode = intval($_GPC['icode']);
-
 			if (0 < $icode) {
 				if (p('offic')) {
 					$iagent = pdo_fetch('select * from ' . tablename('ewei_shop_member') . ' where mobile = :mobile and uniacid = :uniacid limit 1', array(':mobile' => $icode, ':uniacid' => intval($_W['uniacid'])));
@@ -107,10 +106,8 @@ class Register_EweiShopV2Page extends CommissionMobileLoginPage
 					}
 				}
 			}
-
 			$become_check = intval($set['become_check']);
 			$ret['status'] = $become_check;
-
 			if ($template_flag == 1) {
 				$memberdata = $_GPC['memberdata'];
 				$insert_data = $diyform_plugin->getInsertData($fields, $memberdata);
@@ -141,7 +138,7 @@ class Register_EweiShopV2Page extends CommissionMobileLoginPage
 				}
 			}
 			else {
-				$data = array('isagent' => 1, 'agentid' => $mid, 'status' => $become_check, 'realname' => $_GPC['realname'], 'mobile' => $_GPC['mobile'], 'weixin' => $_GPC['weixin'], 'agenttime' => $become_check == 1 ? time() : 0);
+				$data = array('isagent' => 1, 'agentid' => $mid, 'status' => $become_check, 'realname' => $_GPC['realname'], 'mobile' => $_GPC['mobile'], 'weixin' => $_GPC['weixin'], 'sub' => $_GPC['sub'], 'district' => $_GPC['district'],'agenttime' => $become_check == 1 ? time() : 0);
 				pdo_update('ewei_shop_member', $data, array('id' => $member['id']));
 
 				if ($become_check == 1) {
@@ -171,7 +168,6 @@ class Register_EweiShopV2Page extends CommissionMobileLoginPage
 		$order_status = intval($set['become_order']) == 0 ? 1 : 3;
 		$become_check = intval($set['become_check']);
 		$to_check_agent = false;
-
 		if (empty($set['become'])) {
 			if (empty($member['status']) || empty($member['isagent'])) {
 				$data = array('isagent' => 1, 'agentid' => $mid, 'status' => $become_check, 'agenttime' => $become_check == 1 ? time() : 0);

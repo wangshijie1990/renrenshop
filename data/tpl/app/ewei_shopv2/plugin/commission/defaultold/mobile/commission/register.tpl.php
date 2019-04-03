@@ -115,12 +115,28 @@
                 <div class='fui-cell-label'>手机号</div>
                 <div class='fui-cell-info'><input type="tel" class='fui-input' id='mobile' placeholder="请填写手机号码方便联系" value="<?php  echo $member['mobile'];?>" /></div>
             </div>
-
+            <!--
+            <div class='fui-cell must'>
+                <div class='fui-cell-label'>所属区域</div>
+                <div class='fui-cell-info'>
+                	<select name="sub" class='fui-select'>
+                		<option value="" <?php if(!$member['sub']){?>selected<?php }?>>请选择</option>
+                		<option value="1" <?php if($member['sub']==1){?>selected<?php }?>>金水区</option>
+						<option value="2" <?php if($member['sub']==2){?>selected<?php }?>>二七区</option>
+						<option value="3" <?php if($member['sub']==3){?>selected<?php }?>>惠济区</option>
+						<option value="4" <?php if($member['sub']==4){?>selected<?php }?>>管城区</option>
+						<option value="5" <?php if($member['sub']==5){?>selected<?php }?>>中原区</option>
+                	</select>
+                </div>
+            </div>
+            <div class='fui-cell must'>
+                <div class='fui-cell-label'>小区名称</div>
+                <div class='fui-cell-info'><input type="text" class='fui-input' id='district' placeholder="请填写小区名称" value="<?php  echo $member['district'];?>" /></div>
+            </div>-->
             <div class='fui-cell'>
                 <div class='fui-cell-label'>微信号</div>
                 <div class='fui-cell-info'><input type="text" class='fui-input' id='weixin' placeholder="请填写微信号" value="<?php  echo $member['weixin'];?>" /></div>
             </div>
-
             <?php  } ?>
 
             <?php  if($set['open_protocol'] == 1) { ?>
