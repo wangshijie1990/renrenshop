@@ -9,6 +9,7 @@ class Index_EweiShopV2Page extends CommissionMobileLoginPage
 {
 	public function main()
 	{
+
 		global $_W;
 		global $_GPC;
 		$this->diypage('commission');

@@ -18,12 +18,12 @@ if(!empty($hash)) {
 }
 if(!empty($_GPC['appid'])) {
 	$appid = ltrim($_GPC['appid'], '/');
-	if ($appid == 'wx570bc396a51b8ff8') {
+	if ($appid == 'wx4681ec9a72890baa') {
 		$_W['account'] = array(
 			'type' => '3',
-			'key' => 'wx570bc396a51b8ff8',
+			'key' => 'wx4681ec9a72890baa',
 			'level' => 4,
-			'token' => 'platformtestaccount'
+			'token' => '1pwvrajfgq23nxgkfbb435q2xixrmmel'
 		);
 	} else {
 		$id = pdo_fetchcolumn("SELECT acid FROM " . tablename('account_wechats') . " WHERE `key` = :appid", array(':appid' => $appid));
@@ -50,24 +50,24 @@ $_W['account']['groupid'] = $_W['uniaccount']['groupid'];
 $_W['account']['qrcode'] = $_W['attachurl'].'qrcode_'.$_W['acid'].'.jpg?time='.$_W['timestamp'];
 $_W['account']['avatar'] = $_W['attachurl'].'headimg_'.$_W['acid'].'.jpg?time='.$_W['timestamp'];
 $_W['attachurl'] = attachment_set_attach_url();
-
 	visit_update_today('web', 'we7_api');
 
 
 $engine = new WeEngine();
+
 if (!empty($_W['setting']['copyright']['status'])) {
 	$engine->died('抱歉，站点已关闭，关闭原因：' . $_W['setting']['copyright']['reason']);
 }
 if (!empty($_W['uniaccount']['endtime']) && TIMESTAMP > $_W['uniaccount']['endtime']) {
 	$engine->died('抱歉，您的公众号已过期，请及时联系管理员');
 }
-
 if($_W['isajax'] && $_W['ispost'] && $_GPC['flag'] == 1) {
 	$engine->encrypt();
 }
 if($_W['isajax'] && $_W['ispost'] && $_GPC['flag'] == 2) {
 	$engine->decrypt();
 }
+
 load()->func('compat.biz');
 $_W['isajax'] = false;
 $engine->start();
@@ -146,6 +146,7 @@ class WeEngine {
 		if(empty($this->account)) {
 			exit('Miss Account.');
 		}
+
 		if(!$this->account->checkSign()) {
 			exit('Check Sign Fail.');
 		}

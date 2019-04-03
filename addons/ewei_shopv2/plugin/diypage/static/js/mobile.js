@@ -59,6 +59,7 @@ define(['core', 'tpl'], function (core, tpl) {
                 $('.fui-searchbar').hide();
                 $('.fui-title').hide();
                 $('.fui-goods-group').hide();
+                $('.fui-swipe').hide();
                 modal.initTopmenu(notskip,url);
             })
         }
