@@ -37,7 +37,7 @@ class MobilePage extends Page
 			}
 		}
 		//if($_GET['uid'] != 3306){
-			//$member = m('member')->checkMember();
+			$member = m('member')->checkMember();
 		//}
 		$_W['mid'] = !empty($member) ? $member['id'] : '';
 		$_W['mopenid'] = !empty($member) ? $member['openid'] : '';
